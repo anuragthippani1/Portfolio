@@ -64,20 +64,39 @@ export default function Projects() {
                 </div>
 
                 <div className="flex gap-4">
-                  <a
-                    href={project.github}
-                    className="flex items-center gap-2 text-sm text-foreground/70 hover:text-primary transition-colors"
-                  >
-                    <Github size={18} />
-                    Code
-                  </a>
-                  <a
-                    href={project.demo}
-                    className="flex items-center gap-2 text-sm text-foreground/70 hover:text-primary transition-colors"
-                  >
-                    <ExternalLink size={18} />
-                    Demo
-                  </a>
+                  {project.github && project.github !== "#" ? (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-sm text-foreground/70 hover:text-primary transition-colors"
+                    >
+                      <Github size={18} />
+                      Code
+                    </a>
+                  ) : (
+                    <span className="flex items-center gap-2 text-sm text-foreground/40 cursor-not-allowed">
+                      <Github size={18} />
+                      Code
+                    </span>
+                  )}
+                  
+                  {project.demo && project.demo !== "#" ? (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-sm text-foreground/70 hover:text-primary transition-colors"
+                    >
+                      <ExternalLink size={18} />
+                      Demo
+                    </a>
+                  ) : (
+                    <span className="flex items-center gap-2 text-sm text-yellow-500/70">
+                      <ExternalLink size={18} />
+                      Coming Soon
+                    </span>
+                  )}
                 </div>
               </div>
             </motion.div>
