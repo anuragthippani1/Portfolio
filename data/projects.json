@@ -14,7 +14,7 @@
     "description": "Built for Walmart Sparkathon; detects fraudulent return behaviors using machine learning classifiers.",
     "techStack": ["Python", "scikit-learn", "Streamlit", "Flask API", "MongoDB"],
     "github": "https://github.com/anuragthippani1/return_abuse_detection_system",
-    "demo": "https://github.com/anuragthippani1/return_abuse_detection_system",
+    "demo": "coming-soon",
     "featured": true
   },
   {
@@ -22,8 +22,8 @@
     "title": "Automated Complaint Classification System (ACCS)",
     "description": "Classifies user complaints automatically using ML and Flask web integration.",
     "techStack": ["Python", "Flask", "MongoDB", "scikit-learn"],
-    "github": "#",
-    "demo": "#",
+    "github": "https://github.com/anuragthippani1/Enterprise-Complaint-Intelligence-System",
+    "demo": "coming-soon",
     "featured": false
   },
   {
@@ -31,8 +31,8 @@
     "title": "Pneumonia Detection Using CNN",
     "description": "Deep learning model that identifies pneumonia from X-ray images.",
     "techStack": ["TensorFlow", "Flask", "React", "MongoDB"],
-    "github": "#",
-    "demo": "#",
+    "github": "https://github.com/anuragthippani1/Pneumonia-Detection-",
+    "demo": "coming-soon",
     "featured": true
   },
   {
@@ -40,8 +40,8 @@
     "title": "Canteen Management System (Modernized C Project)",
     "description": "Futuristic version of my 1st-year project with GUI and file I/O system.",
     "techStack": ["C++", "File System", "UI Enhancement"],
-    "github": "#",
-    "demo": "#",
+    "github": "https://github.com/anuragthippani1/Canteen-Management-and-Billing-System-",
+    "demo": "coming-soon",
     "featured": false
   }
 ]

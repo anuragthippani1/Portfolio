@@ -23,23 +23,26 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     // Create mailto link with form data
-    const subject = encodeURIComponent(`Portfolio Contact from ${formData.name}`);
+    const subject = encodeURIComponent(
+      `Portfolio Contact from ${formData.name}`
+    );
     const body = encodeURIComponent(
       `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
     );
     const mailtoLink = `mailto:anuragthippani8@gmail.com?subject=${subject}&body=${body}`;
-    
+
     // Open default email client
     window.location.href = mailtoLink;
-    
+
     // Show success message
     setStatus({
       type: "success",
-      message: "Opening your email client... You can also email me directly at anuragthippani8@gmail.com",
+      message:
+        "Opening your email client... You can also email me directly at anuragthippani8@gmail.com",
     });
-    
+
     // Reset form after a delay
     setTimeout(() => {
       setFormData({ name: "", email: "", message: "" });
@@ -235,9 +238,10 @@ export default function Contact() {
                 <Send size={20} />
                 Send Message via Email
               </button>
-              
+
               <p className="text-xs text-center text-foreground/60">
-                This will open your default email client with the message pre-filled
+                This will open your default email client with the message
+                pre-filled
               </p>
             </form>
           </motion.div>

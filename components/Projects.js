@@ -81,7 +81,7 @@ export default function Projects() {
                     </span>
                   )}
                   
-                  {project.demo && project.demo !== "#" ? (
+                  {project.demo && project.demo !== "#" && project.demo !== "coming-soon" ? (
                     <a
                       href={project.demo}
                       target="_blank"
@@ -92,10 +92,15 @@ export default function Projects() {
                       Demo
                     </a>
                   ) : (
-                    <span className="flex items-center gap-2 text-sm text-yellow-500/70">
+                    <a
+                      href="/coming-soon"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-sm text-yellow-500/70 hover:text-yellow-500 transition-colors"
+                    >
                       <ExternalLink size={18} />
                       Coming Soon
-                    </span>
+                    </a>
                   )}
                 </div>
               </div>

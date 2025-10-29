@@ -67,7 +67,9 @@ export default function Patents() {
                     </div>
 
                     <div className="flex items-center gap-4 text-sm text-foreground/60 mb-4">
-                      <span className="font-semibold">{patent.patentNumber}</span>
+                      <span className="font-semibold">
+                        {patent.patentNumber}
+                      </span>
                       <span>•</span>
                       <div className="flex items-center gap-1">
                         <Calendar size={16} />
@@ -103,4 +105,3 @@ export default function Patents() {
     </section>
   );
 }
-
