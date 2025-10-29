@@ -21,39 +21,30 @@ export default function Contact() {
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setLoading(true);
-    setStatus({ type: "", message: "" });
-
-    try {
-      // Replace with your EmailJS credentials
-      // You'll need to sign up at emailjs.com and get these IDs
-      await emailjs.send(
-        "YOUR_SERVICE_ID", // Replace with your service ID
-        "YOUR_TEMPLATE_ID", // Replace with your template ID
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          message: formData.message,
-        },
-        "YOUR_PUBLIC_KEY" // Replace with your public key
-      );
-
-      setStatus({
-        type: "success",
-        message: "Message sent successfully! I'll get back to you soon.",
-      });
+    
+    // Create mailto link with form data
+    const subject = encodeURIComponent(`Portfolio Contact from ${formData.name}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    );
+    const mailtoLink = `mailto:anuragthippani8@gmail.com?subject=${subject}&body=${body}`;
+    
+    // Open default email client
+    window.location.href = mailtoLink;
+    
+    // Show success message
+    setStatus({
+      type: "success",
+      message: "Opening your email client... You can also email me directly at anuragthippani8@gmail.com",
+    });
+    
+    // Reset form after a delay
+    setTimeout(() => {
       setFormData({ name: "", email: "", message: "" });
-    } catch (error) {
-      setStatus({
-        type: "error",
-        message:
-          "Failed to send message. Please try again or contact me directly.",
-      });
-    } finally {
-      setLoading(false);
-    }
+      setStatus({ type: "", message: "" });
+    }, 3000);
   };
 
   const contactLinks = [
@@ -239,18 +230,15 @@ export default function Contact() {
 
               <button
                 type="submit"
-                disabled={loading}
-                className="w-full px-8 py-3 bg-primary text-primary-foreground rounded-lg font-semibold flex items-center justify-center gap-2 hover:scale-105 transition-transform disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full px-8 py-3 bg-primary text-primary-foreground rounded-lg font-semibold flex items-center justify-center gap-2 hover:scale-105 transition-transform"
               >
-                {loading ? (
-                  "Sending..."
-                ) : (
-                  <>
-                    <Send size={20} />
-                    Send Message
-                  </>
-                )}
+                <Send size={20} />
+                Send Message via Email
               </button>
+              
+              <p className="text-xs text-center text-foreground/60">
+                This will open your default email client with the message pre-filled
+              </p>
             </form>
           </motion.div>
         </div>
