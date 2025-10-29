@@ -1,0 +1,75 @@
+[
+  {
+    "id": 1,
+    "title": "SentriX: AI Sentinel for Global Supply Chain Risk Detection",
+    "description": "AI agent system that predicts and detects real-time supply chain risks using ML and predictive analytics.",
+    "techStack": ["Python", "Flask", "TensorFlow", "MongoDB", "Cloud APIs"],
+    "github": "#",
+    "demo": "#",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "title": "AI-Based Return Abuse Detection System",
+    "description": "Built for Walmart Sparkathon; detects fraudulent return behaviors using machine learning classifiers.",
+    "techStack": ["Python", "scikit-learn", "Streamlit", "Flask API", "MongoDB"],
+    "github": "#",
+    "demo": "#",
+    "featured": true
+  },
+  {
+    "id": 3,
+    "title": "Automated Complaint Classification System (ACCS)",
+    "description": "Classifies user complaints automatically using ML and Flask web integration.",
+    "techStack": ["Python", "Flask", "MongoDB", "scikit-learn"],
+    "github": "#",
+    "demo": "#",
+    "featured": false
+  },
+  {
+    "id": 4,
+    "title": "Pneumonia Detection Using CNN",
+    "description": "Deep learning model that identifies pneumonia from X-ray images.",
+    "techStack": ["TensorFlow", "Flask", "React", "MongoDB"],
+    "github": "#",
+    "demo": "#",
+    "featured": true
+  },
+  {
+    "id": 5,
+    "title": "Canteen Management System (Modernized C Project)",
+    "description": "Futuristic version of my 1st-year project with GUI and file I/O system.",
+    "techStack": ["C++", "File System", "UI Enhancement"],
+    "github": "#",
+    "demo": "#",
+    "featured": false
+  },
+  {
+    "id": 6,
+    "title": "Online Food Website",
+    "description": "Full-stack MERN application for online food ordering.",
+    "techStack": ["MongoDB", "Express", "React", "Node.js"],
+    "github": "#",
+    "demo": "#",
+    "featured": false
+  },
+  {
+    "id": 7,
+    "title": "DeepGuard: Browser-Based Deepfake Detector",
+    "description": "Chrome extension that detects deepfakes using a PyTorch model converted to TensorFlow.js.",
+    "techStack": ["PyTorch", "TensorFlow.js", "Chrome Extension APIs"],
+    "github": "#",
+    "demo": "#",
+    "featured": true
+  },
+  {
+    "id": 8,
+    "title": "AI in Edge Computing",
+    "description": "Researched and presented how AI integrates with edge computing for real-time analytics.",
+    "techStack": ["Research", "AI", "Edge Computing", "Presentation"],
+    "github": "#",
+    "demo": "#",
+    "featured": false
+  }
+]
+
