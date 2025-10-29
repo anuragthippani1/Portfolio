@@ -12,7 +12,7 @@ export default function Footer() {
     },
     {
       icon: Linkedin,
-      href: "#", // Add actual LinkedIn URL
+      href: "https://www.linkedin.com/in/anuragvarmathippani/",
       label: "LinkedIn",
     },
     {
@@ -23,14 +23,18 @@ export default function Footer() {
   ];
 
   const quickLinks = [
-    { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
+    { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
-    { name: "Experience", href: "#experience" },
+    { name: "Resume", href: "/resume.pdf" },
     { name: "Contact", href: "#contact" },
   ];
 
   const handleNavClick = (e, href) => {
+    // Allow default behavior for resume link
+    if (href === "/resume.pdf") {
+      return;
+    }
     e.preventDefault();
     const element = document.querySelector(href);
     if (element) {

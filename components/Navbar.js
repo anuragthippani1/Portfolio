@@ -17,14 +17,19 @@ export default function Navbar() {
   }, []);
 
   const navItems = [
-    { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
+    { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
-    { name: "Experience", href: "#experience" },
+    { name: "Resume", href: "/resume.pdf" },
     { name: "Contact", href: "#contact" },
   ];
 
   const handleNavClick = (e, href) => {
+    // Allow default behavior for resume link
+    if (href === "/resume.pdf") {
+      setIsOpen(false);
+      return;
+    }
     e.preventDefault();
     setIsOpen(false);
     const element = document.querySelector(href);

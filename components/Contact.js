@@ -66,8 +66,8 @@ export default function Contact() {
     {
       icon: Linkedin,
       label: "LinkedIn",
-      value: "Connect on LinkedIn",
-      href: "#", // Add actual LinkedIn profile URL
+      value: "linkedin.com/in/anuragvarmathippani",
+      href: "https://www.linkedin.com/in/anuragvarmathippani/",
     },
     {
       icon: Github,

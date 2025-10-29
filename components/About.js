@@ -187,6 +187,7 @@ export default function About() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           className="mt-20"
+          id="skills"
         >
           <h3 className="text-3xl font-bold text-center mb-12">
             Technical <span className="gradient-text">Expertise</span>
