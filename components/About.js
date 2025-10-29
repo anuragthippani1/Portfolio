@@ -112,29 +112,11 @@ export default function About() {
           </div>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Profile Image */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="relative"
-          >
-            <div className="relative w-full max-w-md mx-auto">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-3xl blur-2xl opacity-30 animate-pulse" />
-              <div className="relative glass rounded-3xl p-8 aspect-square flex items-center justify-center">
-                <div className="w-full h-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl flex items-center justify-center">
-                  <span className="text-9xl gradient-text font-bold">AT</span>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
+        <div className="max-w-4xl mx-auto">
           {/* About Text */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
             className="space-y-6"
