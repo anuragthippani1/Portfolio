@@ -43,33 +43,5 @@
     "github": "#",
     "demo": "#",
     "featured": false
-  },
-  {
-    "id": 6,
-    "title": "Online Food Website",
-    "description": "Full-stack MERN application for online food ordering.",
-    "techStack": ["MongoDB", "Express", "React", "Node.js"],
-    "github": "#",
-    "demo": "#",
-    "featured": false
-  },
-  {
-    "id": 7,
-    "title": "DeepGuard: Browser-Based Deepfake Detector",
-    "description": "Chrome extension that detects deepfakes using a PyTorch model converted to TensorFlow.js.",
-    "techStack": ["PyTorch", "TensorFlow.js", "Chrome Extension APIs"],
-    "github": "#",
-    "demo": "#",
-    "featured": true
-  },
-  {
-    "id": 8,
-    "title": "AI in Edge Computing",
-    "description": "Researched and presented how AI integrates with edge computing for real-time analytics.",
-    "techStack": ["Research", "AI", "Edge Computing", "Presentation"],
-    "github": "#",
-    "demo": "#",
-    "featured": false
   }
 ]
-
