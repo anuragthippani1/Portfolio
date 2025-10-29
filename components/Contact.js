@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Linkedin, Github, Send, MapPin } from "lucide-react";
-import emailjs from "emailjs-com";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -26,35 +25,37 @@ export default function Contact() {
     setIsSubmitting(true);
     setStatus({ type: "", message: "" });
 
-    // EmailJS Configuration
-    // TODO: Replace with your actual EmailJS credentials from https://www.emailjs.com
-    const SERVICE_ID = "service_portfolio"; // Your EmailJS Service ID
-    const TEMPLATE_ID = "template_portfolio"; // Your EmailJS Template ID
-    const USER_ID = "your_emailjs_user_id"; // Your EmailJS Public Key
+    // Web3Forms API - Simple and FREE!
+    // Get your access key from: https://web3forms.com (takes 1 minute)
+    const ACCESS_KEY = "YOUR_WEB3FORMS_ACCESS_KEY"; // Replace with your key
+
+    const formDataToSend = new FormData();
+    formDataToSend.append("access_key", ACCESS_KEY);
+    formDataToSend.append("name", formData.name);
+    formDataToSend.append("email", formData.email);
+    formDataToSend.append("message", formData.message);
+    formDataToSend.append("subject", `New Portfolio Contact from ${formData.name}`);
+    formDataToSend.append("from_name", "Portfolio Contact Form");
 
     try {
-      // Send email using EmailJS
-      const result = await emailjs.send(
-        SERVICE_ID,
-        TEMPLATE_ID,
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          message: formData.message,
-          to_email: "anuragthippani8@gmail.com",
-        },
-        USER_ID
-      );
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formDataToSend,
+      });
 
-      if (result.text === "OK") {
+      const data = await response.json();
+
+      if (data.success) {
         setStatus({
           type: "success",
           message: "✅ Message sent successfully! I'll get back to you soon.",
         });
         setFormData({ name: "", email: "", message: "" });
+      } else {
+        throw new Error(data.message || "Failed to send");
       }
     } catch (error) {
-      console.error("EmailJS Error:", error);
+      console.error("Form Error:", error);
       setStatus({
         type: "error",
         message:
