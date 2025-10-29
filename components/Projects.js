@@ -1,8 +1,8 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { ExternalLink, Github, Sparkles } from 'lucide-react'
-import projectsData from '@/data/projects.json'
+import { motion } from "framer-motion";
+import { ExternalLink, Github, Sparkles } from "lucide-react";
+import projectsData from "@/data/projects.json";
 
 export default function Projects() {
   return (
@@ -19,7 +19,8 @@ export default function Projects() {
             Featured <span className="gradient-text">Projects</span>
           </h2>
           <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
-            Showcasing innovative solutions that blend AI, machine learning, and full-stack development
+            Showcasing innovative solutions that blend AI, machine learning, and
+            full-stack development
           </p>
         </motion.div>
 
@@ -34,7 +35,7 @@ export default function Projects() {
               className="group relative"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500" />
-              
+
               <div className="relative h-full glass rounded-2xl p-6 hover:scale-105 transition-transform duration-300">
                 {project.featured && (
                   <div className="absolute -top-3 -right-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1">
@@ -84,6 +85,5 @@ export default function Projects() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-

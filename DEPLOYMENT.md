@@ -7,17 +7,20 @@ This guide will help you deploy your portfolio to Vercel.
 ### Method 1: Using Vercel CLI (Recommended)
 
 1. **Install Vercel CLI:**
+
    ```bash
    npm install -g vercel
    ```
 
 2. **Deploy:**
+
    ```bash
    cd /Users/anuragthippani/Documents/programs/Portfolio
    vercel
    ```
 
 3. **Follow the prompts:**
+
    - Set up and deploy? Yes
    - Which scope? (Your account)
    - Link to existing project? No
@@ -100,16 +103,19 @@ npm start
 ## Troubleshooting
 
 ### Build Fails
+
 - Check `package.json` doesn't have `"type": "commonjs"`
 - Ensure all imports are correct
 - Run `npm install` to ensure all dependencies are installed
 
 ### Contact Form Not Working
+
 - Make sure EmailJS credentials are configured
 - Check browser console for errors
 - Verify EmailJS service is active
 
 ### GitHub API Not Loading
+
 - Check if GitHub username is correct in `components/GitHub.js`
 - Verify GitHub API rate limits haven't been exceeded
 - Check browser console for network errors
@@ -117,6 +123,7 @@ npm start
 ## Performance Tips
 
 Your portfolio is already optimized with:
+
 - ✅ Next.js 14 automatic optimizations
 - ✅ Static page generation
 - ✅ Image optimization ready
@@ -126,7 +133,7 @@ Your portfolio is already optimized with:
 ## Support
 
 If you encounter any issues:
+
 1. Check the Next.js documentation: https://nextjs.org/docs
 2. Check Vercel documentation: https://vercel.com/docs
 3. Review the README.md file
-

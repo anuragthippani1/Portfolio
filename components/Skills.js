@@ -1,99 +1,99 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { 
-  Code2, 
-  Layers, 
-  Brain, 
-  Database, 
-  Cloud, 
+import { motion } from "framer-motion";
+import {
+  Code2,
+  Layers,
+  Brain,
+  Database,
+  Cloud,
   GitBranch,
   Palette,
-  Server
-} from 'lucide-react'
+  Server,
+} from "lucide-react";
 
 export default function Skills() {
   const skillCategories = [
     {
-      title: 'Languages',
+      title: "Languages",
       icon: Code2,
       skills: [
-        { name: 'Python', level: 90 },
-        { name: 'JavaScript', level: 85 },
-        { name: 'C', level: 80 },
-        { name: 'Java', level: 75 },
+        { name: "Python", level: 90 },
+        { name: "JavaScript", level: 85 },
+        { name: "C", level: 80 },
+        { name: "Java", level: 75 },
       ],
     },
     {
-      title: 'Frameworks',
+      title: "Frameworks",
       icon: Layers,
       skills: [
-        { name: 'React', level: 90 },
-        { name: 'Next.js', level: 85 },
-        { name: 'Flask', level: 85 },
-        { name: 'Express', level: 80 },
+        { name: "React", level: 90 },
+        { name: "Next.js", level: 85 },
+        { name: "Flask", level: 85 },
+        { name: "Express", level: 80 },
       ],
     },
     {
-      title: 'AI/ML Tools',
+      title: "AI/ML Tools",
       icon: Brain,
       skills: [
-        { name: 'TensorFlow', level: 85 },
-        { name: 'PyTorch', level: 80 },
-        { name: 'scikit-learn', level: 90 },
-        { name: 'Keras', level: 75 },
+        { name: "TensorFlow", level: 85 },
+        { name: "PyTorch", level: 80 },
+        { name: "scikit-learn", level: 90 },
+        { name: "Keras", level: 75 },
       ],
     },
     {
-      title: 'Databases',
+      title: "Databases",
       icon: Database,
       skills: [
-        { name: 'MongoDB', level: 90 },
-        { name: 'MySQL', level: 85 },
-        { name: 'PostgreSQL', level: 75 },
-        { name: 'Redis', level: 70 },
+        { name: "MongoDB", level: 90 },
+        { name: "MySQL", level: 85 },
+        { name: "PostgreSQL", level: 75 },
+        { name: "Redis", level: 70 },
       ],
     },
     {
-      title: 'Cloud & DevOps',
+      title: "Cloud & DevOps",
       icon: Cloud,
       skills: [
-        { name: 'AWS', level: 80 },
-        { name: 'Vercel', level: 90 },
-        { name: 'Render', level: 85 },
-        { name: 'Docker', level: 70 },
+        { name: "AWS", level: 80 },
+        { name: "Vercel", level: 90 },
+        { name: "Render", level: 85 },
+        { name: "Docker", level: 70 },
       ],
     },
     {
-      title: 'Version Control',
+      title: "Version Control",
       icon: GitBranch,
       skills: [
-        { name: 'Git', level: 90 },
-        { name: 'GitHub', level: 90 },
-        { name: 'GitLab', level: 75 },
+        { name: "Git", level: 90 },
+        { name: "GitHub", level: 90 },
+        { name: "GitLab", level: 75 },
       ],
     },
     {
-      title: 'UI/UX Tools',
+      title: "UI/UX Tools",
       icon: Palette,
       skills: [
-        { name: 'TailwindCSS', level: 95 },
-        { name: 'Shadcn/UI', level: 85 },
-        { name: 'Framer Motion', level: 80 },
-        { name: 'Figma', level: 70 },
+        { name: "TailwindCSS", level: 95 },
+        { name: "Shadcn/UI", level: 85 },
+        { name: "Framer Motion", level: 80 },
+        { name: "Figma", level: 70 },
       ],
     },
     {
-      title: 'Backend',
+      title: "Backend",
       icon: Server,
       skills: [
-        { name: 'Node.js', level: 85 },
-        { name: 'REST APIs', level: 90 },
-        { name: 'GraphQL', level: 70 },
-        { name: 'WebSockets', level: 75 },
+        { name: "Node.js", level: 85 },
+        { name: "REST APIs", level: 90 },
+        { name: "GraphQL", level: 70 },
+        { name: "WebSockets", level: 75 },
       ],
     },
-  ]
+  ];
 
   return (
     <section id="skills" className="py-20 relative">
@@ -109,13 +109,14 @@ export default function Skills() {
             Skills & <span className="gradient-text">Technologies</span>
           </h2>
           <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
-            A comprehensive toolkit for building intelligent and scalable applications
+            A comprehensive toolkit for building intelligent and scalable
+            applications
           </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {skillCategories.map((category, index) => {
-            const Icon = category.icon
+            const Icon = category.icon;
             return (
               <motion.div
                 key={category.title}
@@ -136,8 +137,12 @@ export default function Skills() {
                   {category.skills.map((skill) => (
                     <div key={skill.name}>
                       <div className="flex justify-between mb-2">
-                        <span className="text-sm font-medium">{skill.name}</span>
-                        <span className="text-sm text-foreground/60">{skill.level}%</span>
+                        <span className="text-sm font-medium">
+                          {skill.name}
+                        </span>
+                        <span className="text-sm text-foreground/60">
+                          {skill.level}%
+                        </span>
                       </div>
                       <div className="h-2 bg-secondary rounded-full overflow-hidden">
                         <motion.div
@@ -152,11 +157,10 @@ export default function Skills() {
                   ))}
                 </div>
               </motion.div>
-            )
+            );
           })}
         </div>
       </div>
     </section>
-  )
+  );
 }
-

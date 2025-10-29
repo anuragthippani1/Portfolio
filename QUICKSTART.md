@@ -21,17 +21,20 @@ npm run dev
 Your portfolio has:
 
 ✨ **Modern Design**
+
 - Dark/Light mode toggle
 - Glassmorphism effects
 - Animated gradients
 - Smooth transitions with Framer Motion
 
 📱 **Fully Responsive**
+
 - Mobile-first design
 - Works on all devices
 - Optimized for performance
 
 🎯 **Key Sections**
+
 1. **Hero** - Eye-catching intro with gradient background
 2. **About** - Professional bio with typing animation
 3. **Projects** - 8 featured projects with tech stack badges
@@ -46,21 +49,25 @@ Your portfolio has:
 ### 1. Update Personal Info
 
 **About Section** (`components/About.js`):
+
 - Change profile text
 - Update university info
 - Modify quick facts
 
 **Contact** (`components/Contact.js`):
+
 - Update email: `anuragthippani@gmail.com`
 - Add LinkedIn URL
 - Add Twitter URL
 
 **Footer** (`components/Footer.js`):
+
 - Update social media links
 
 ### 2. Update Projects
 
 Edit `data/projects.json`:
+
 ```json
 {
   "id": 1,
@@ -76,8 +83,9 @@ Edit `data/projects.json`:
 ### 3. Update GitHub Username
 
 In `components/GitHub.js`, line 18:
+
 ```javascript
-const username = 'anuragthippani1' // Change to your username
+const username = "anuragthippani1"; // Change to your username
 ```
 
 ### 4. Configure EmailJS (Optional)
@@ -89,6 +97,7 @@ const username = 'anuragthippani1' // Change to your username
 ### 5. Add Resume
 
 Place your PDF resume at:
+
 ```
 /public/resume.pdf
 ```
@@ -96,6 +105,7 @@ Place your PDF resume at:
 ## 🎨 Color Customization
 
 Edit `app/globals.css` to change theme colors:
+
 ```css
 :root {
   --primary: 221.2 83.2% 53.3%; /* Blue */
@@ -128,6 +138,7 @@ See `DEPLOYMENT.md` for detailed instructions.
 ## 📊 Performance
 
 Your portfolio includes:
+
 - ✅ Static page generation
 - ✅ Image optimization
 - ✅ Code splitting
@@ -137,14 +148,17 @@ Your portfolio includes:
 ## 🔧 Common Tasks
 
 ### Update a Project
+
 1. Edit `data/projects.json`
 2. Save and refresh
 
 ### Change Colors
+
 1. Edit `tailwind.config.js` or `app/globals.css`
 2. Restart dev server
 
 ### Add New Section
+
 1. Create component in `/components`
 2. Import in `app/page.js`
 3. Add to navigation in `components/Navbar.js`
@@ -163,11 +177,13 @@ git push origin main
 ## 🐛 Troubleshooting
 
 **Port already in use?**
+
 ```bash
 npm run dev -- -p 3001
 ```
 
 **Build fails?**
+
 ```bash
 rm -rf node_modules package-lock.json
 npm install
@@ -175,6 +191,7 @@ npm run build
 ```
 
 **GitHub API not working?**
+
 - Check username in `components/GitHub.js`
 - Verify internet connection
 - Check browser console for errors
@@ -197,4 +214,3 @@ npm run build
 ---
 
 **Need help?** Check `README.md` or `DEPLOYMENT.md` for more details!
-

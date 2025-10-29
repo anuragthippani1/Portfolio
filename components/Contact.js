@@ -1,86 +1,87 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { motion } from 'framer-motion'
-import { Mail, Linkedin, Github, Send, MapPin } from 'lucide-react'
-import emailjs from 'emailjs-com'
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Mail, Linkedin, Github, Send, MapPin } from "lucide-react";
+import emailjs from "emailjs-com";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  })
-  const [status, setStatus] = useState({ type: '', message: '' })
-  const [loading, setLoading] = useState(false)
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [status, setStatus] = useState({ type: "", message: "" });
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
-    })
-  }
+    });
+  };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    setLoading(true)
-    setStatus({ type: '', message: '' })
+    e.preventDefault();
+    setLoading(true);
+    setStatus({ type: "", message: "" });
 
     try {
       // Replace with your EmailJS credentials
       // You'll need to sign up at emailjs.com and get these IDs
       await emailjs.send(
-        'YOUR_SERVICE_ID', // Replace with your service ID
-        'YOUR_TEMPLATE_ID', // Replace with your template ID
+        "YOUR_SERVICE_ID", // Replace with your service ID
+        "YOUR_TEMPLATE_ID", // Replace with your template ID
         {
           from_name: formData.name,
           from_email: formData.email,
           message: formData.message,
         },
-        'YOUR_PUBLIC_KEY' // Replace with your public key
-      )
+        "YOUR_PUBLIC_KEY" // Replace with your public key
+      );
 
       setStatus({
-        type: 'success',
-        message: 'Message sent successfully! I\'ll get back to you soon.',
-      })
-      setFormData({ name: '', email: '', message: '' })
+        type: "success",
+        message: "Message sent successfully! I'll get back to you soon.",
+      });
+      setFormData({ name: "", email: "", message: "" });
     } catch (error) {
       setStatus({
-        type: 'error',
-        message: 'Failed to send message. Please try again or contact me directly.',
-      })
+        type: "error",
+        message:
+          "Failed to send message. Please try again or contact me directly.",
+      });
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   const contactLinks = [
     {
       icon: Mail,
-      label: 'Email',
-      value: 'anuragthippani@gmail.com',
-      href: 'mailto:anuragthippani@gmail.com',
+      label: "Email",
+      value: "anuragthippani@gmail.com",
+      href: "mailto:anuragthippani@gmail.com",
     },
     {
       icon: Linkedin,
-      label: 'LinkedIn',
-      value: 'Connect on LinkedIn',
-      href: '#', // Add actual LinkedIn profile URL
+      label: "LinkedIn",
+      value: "Connect on LinkedIn",
+      href: "#", // Add actual LinkedIn profile URL
     },
     {
       icon: Github,
-      label: 'GitHub',
-      value: '@anuragthippani1',
-      href: 'https://github.com/anuragthippani1',
+      label: "GitHub",
+      value: "@anuragthippani1",
+      href: "https://github.com/anuragthippani1",
     },
     {
       icon: MapPin,
-      label: 'Location',
-      value: 'India',
+      label: "Location",
+      value: "India",
       href: null,
     },
-  ]
+  ];
 
   return (
     <section id="contact" className="py-20 relative">
@@ -96,7 +97,8 @@ export default function Contact() {
             Let's <span className="gradient-text">Connect</span>
           </h2>
           <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
-            Have a project in mind or want to collaborate? Feel free to reach out!
+            Have a project in mind or want to collaborate? Feel free to reach
+            out!
           </p>
         </motion.div>
 
@@ -112,13 +114,14 @@ export default function Contact() {
             <div>
               <h3 className="text-2xl font-bold mb-6">Get in Touch</h3>
               <p className="text-foreground/70 mb-8">
-                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+                I'm always open to discussing new projects, creative ideas, or
+                opportunities to be part of your vision.
               </p>
             </div>
 
             <div className="space-y-6">
               {contactLinks.map((link, index) => {
-                const Icon = link.icon
+                const Icon = link.icon;
                 return (
                   <motion.div
                     key={link.label}
@@ -132,7 +135,9 @@ export default function Contact() {
                       <Icon className="text-primary" size={24} />
                     </div>
                     <div>
-                      <div className="text-sm text-foreground/60">{link.label}</div>
+                      <div className="text-sm text-foreground/60">
+                        {link.label}
+                      </div>
                       {link.href ? (
                         <a
                           href={link.href}
@@ -147,7 +152,7 @@ export default function Contact() {
                       )}
                     </div>
                   </motion.div>
-                )
+                );
               })}
             </div>
           </motion.div>
@@ -159,9 +164,15 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <form onSubmit={handleSubmit} className="glass rounded-2xl p-8 space-y-6">
+            <form
+              onSubmit={handleSubmit}
+              className="glass rounded-2xl p-8 space-y-6"
+            >
               <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2">
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium mb-2"
+                >
                   Your Name
                 </label>
                 <input
@@ -177,7 +188,10 @@ export default function Contact() {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium mb-2"
+                >
                   Your Email
                 </label>
                 <input
@@ -193,7 +207,10 @@ export default function Contact() {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium mb-2"
+                >
                   Your Message
                 </label>
                 <textarea
@@ -211,9 +228,9 @@ export default function Contact() {
               {status.message && (
                 <div
                   className={`p-4 rounded-lg ${
-                    status.type === 'success'
-                      ? 'bg-green-500/10 text-green-500'
-                      : 'bg-red-500/10 text-red-500'
+                    status.type === "success"
+                      ? "bg-green-500/10 text-green-500"
+                      : "bg-red-500/10 text-red-500"
                   }`}
                 >
                   {status.message}
@@ -226,7 +243,7 @@ export default function Contact() {
                 className="w-full px-8 py-3 bg-primary text-primary-foreground rounded-lg font-semibold flex items-center justify-center gap-2 hover:scale-105 transition-transform disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {loading ? (
-                  'Sending...'
+                  "Sending..."
                 ) : (
                   <>
                     <Send size={20} />
@@ -239,6 +256,5 @@ export default function Contact() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-

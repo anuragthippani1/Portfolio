@@ -1,27 +1,35 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { Briefcase, Calendar } from 'lucide-react'
+import { motion } from "framer-motion";
+import { Briefcase, Calendar } from "lucide-react";
 
 export default function Experience() {
   const experiences = [
     {
       id: 1,
-      title: 'Research Intern',
-      company: 'AI Research Lab',
-      period: '2024 - Present',
-      description: 'Worked on machine learning model evaluation, data preprocessing, and AI system design. Contributed to research papers and implemented novel ML algorithms.',
-      skills: ['Machine Learning', 'Python', 'TensorFlow', 'Data Analysis', 'Research'],
+      title: "Research Intern",
+      company: "AI Research Lab",
+      period: "2024 - Present",
+      description:
+        "Worked on machine learning model evaluation, data preprocessing, and AI system design. Contributed to research papers and implemented novel ML algorithms.",
+      skills: [
+        "Machine Learning",
+        "Python",
+        "TensorFlow",
+        "Data Analysis",
+        "Research",
+      ],
     },
     {
       id: 2,
-      title: 'Full Stack Development Intern',
-      company: 'Tech Solutions Inc.',
-      period: '2023 - 2024',
-      description: 'Developed REST APIs, front-end dashboards, and implemented authentication systems. Built scalable web applications using MERN stack.',
-      skills: ['React', 'Node.js', 'MongoDB', 'Express', 'REST API'],
+      title: "Full Stack Development Intern",
+      company: "Tech Solutions Inc.",
+      period: "2023 - 2024",
+      description:
+        "Developed REST APIs, front-end dashboards, and implemented authentication systems. Built scalable web applications using MERN stack.",
+      skills: ["React", "Node.js", "MongoDB", "Express", "REST API"],
     },
-  ]
+  ];
 
   return (
     <section id="experience" className="py-20 relative bg-secondary/20">
@@ -52,7 +60,7 @@ export default function Experience() {
               className="group relative"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
-              
+
               <div className="relative glass rounded-2xl p-8 hover:scale-[1.02] transition-transform duration-300">
                 <div className="flex items-start gap-6">
                   <div className="p-4 bg-primary/10 rounded-xl">
@@ -94,6 +102,5 @@ export default function Experience() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-

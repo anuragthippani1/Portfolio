@@ -1,42 +1,66 @@
-'use client'
+"use client";
 
-import { useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
-import { Code, Database, Brain, Cloud, Award } from 'lucide-react'
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { Code, Database, Brain, Cloud, Award } from "lucide-react";
 
 export default function About() {
-  const [text, setText] = useState('')
-  const roles = ['AI Engineer', 'ML Innovator', 'Full Stack Developer', 'Research Intern']
-  const [currentRole, setCurrentRole] = useState(0)
-  const [isDeleting, setIsDeleting] = useState(false)
+  const [text, setText] = useState("");
+  const roles = [
+    "AI Engineer",
+    "ML Innovator",
+    "Full Stack Developer",
+    "Research Intern",
+  ];
+  const [currentRole, setCurrentRole] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    const currentText = roles[currentRole]
-    const timeout = setTimeout(() => {
-      if (!isDeleting) {
-        setText(currentText.substring(0, text.length + 1))
-        if (text === currentText) {
-          setTimeout(() => setIsDeleting(true), 2000)
+    const currentText = roles[currentRole];
+    const timeout = setTimeout(
+      () => {
+        if (!isDeleting) {
+          setText(currentText.substring(0, text.length + 1));
+          if (text === currentText) {
+            setTimeout(() => setIsDeleting(true), 2000);
+          }
+        } else {
+          setText(currentText.substring(0, text.length - 1));
+          if (text === "") {
+            setIsDeleting(false);
+            setCurrentRole((prev) => (prev + 1) % roles.length);
+          }
         }
-      } else {
-        setText(currentText.substring(0, text.length - 1))
-        if (text === '') {
-          setIsDeleting(false)
-          setCurrentRole((prev) => (prev + 1) % roles.length)
-        }
-      }
-    }, isDeleting ? 50 : 100)
+      },
+      isDeleting ? 50 : 100
+    );
 
-    return () => clearTimeout(timeout)
-  }, [text, isDeleting, currentRole, roles])
+    return () => clearTimeout(timeout);
+  }, [text, isDeleting, currentRole, roles]);
 
   const badges = [
-    { category: 'Languages', items: ['C', 'Python', 'Java', 'JavaScript'], icon: Code },
-    { category: 'Frameworks', items: ['MERN Stack', 'Next.js', 'Flask'], icon: Database },
-    { category: 'AI/ML', items: ['TensorFlow', 'PyTorch', 'scikit-learn'], icon: Brain },
-    { category: 'Cloud & DB', items: ['AWS', 'MongoDB', 'MySQL'], icon: Cloud },
-    { category: 'Certifications', items: ['AWS', 'Cisco', 'Microsoft'], icon: Award },
-  ]
+    {
+      category: "Languages",
+      items: ["C", "Python", "Java", "JavaScript"],
+      icon: Code,
+    },
+    {
+      category: "Frameworks",
+      items: ["MERN Stack", "Next.js", "Flask"],
+      icon: Database,
+    },
+    {
+      category: "AI/ML",
+      items: ["TensorFlow", "PyTorch", "scikit-learn"],
+      icon: Brain,
+    },
+    { category: "Cloud & DB", items: ["AWS", "MongoDB", "MySQL"], icon: Cloud },
+    {
+      category: "Certifications",
+      items: ["AWS", "Cisco", "Microsoft"],
+      icon: Award,
+    },
+  ];
 
   return (
     <section id="about" className="py-20 relative">
@@ -85,20 +109,29 @@ export default function About() {
             className="space-y-6"
           >
             <p className="text-lg text-foreground/80 leading-relaxed">
-              I'm <span className="text-primary font-semibold">Anurag</span>, a final-year Computer Science undergraduate at 
-              <span className="text-primary font-semibold"> SR University</span> (2022–2026) passionate about Artificial Intelligence, 
-              Machine Learning, and Full Stack Development. I specialize in building intelligent systems and scalable web applications 
-              that merge innovation with real-world impact.
+              I'm <span className="text-primary font-semibold">Anurag</span>, a
+              final-year Computer Science undergraduate at
+              <span className="text-primary font-semibold">
+                {" "}
+                SR University
+              </span>{" "}
+              (2022–2026) passionate about Artificial Intelligence, Machine
+              Learning, and Full Stack Development. I specialize in building
+              intelligent systems and scalable web applications that merge
+              innovation with real-world impact.
             </p>
 
             <p className="text-lg text-foreground/80 leading-relaxed">
-              My journey in tech has been driven by curiosity and a desire to create solutions that make a difference. 
-              From developing AI-powered systems to building full-stack applications, I thrive on turning complex problems 
-              into elegant, user-friendly solutions.
+              My journey in tech has been driven by curiosity and a desire to
+              create solutions that make a difference. From developing
+              AI-powered systems to building full-stack applications, I thrive
+              on turning complex problems into elegant, user-friendly solutions.
             </p>
 
             <div className="pt-4">
-              <h3 className="text-xl font-semibold mb-4 gradient-text">Quick Facts</h3>
+              <h3 className="text-xl font-semibold mb-4 gradient-text">
+                Quick Facts
+              </h3>
               <div className="grid grid-cols-2 gap-4">
                 <div className="glass p-4 rounded-lg">
                   <p className="text-sm text-foreground/60">Location</p>
@@ -134,7 +167,7 @@ export default function About() {
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {badges.map((badge, index) => {
-              const Icon = badge.icon
+              const Icon = badge.icon;
               return (
                 <motion.div
                   key={badge.category}
@@ -161,12 +194,11 @@ export default function About() {
                     ))}
                   </div>
                 </motion.div>
-              )
+              );
             })}
           </div>
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
-

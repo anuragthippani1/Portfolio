@@ -1,41 +1,41 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { Github, Linkedin, Twitter, Heart } from 'lucide-react'
+import { motion } from "framer-motion";
+import { Github, Linkedin, Twitter, Heart } from "lucide-react";
 
 export default function Footer() {
   const socialLinks = [
     {
       icon: Github,
-      href: 'https://github.com/anuragthippani1',
-      label: 'GitHub',
+      href: "https://github.com/anuragthippani1",
+      label: "GitHub",
     },
     {
       icon: Linkedin,
-      href: '#', // Add actual LinkedIn URL
-      label: 'LinkedIn',
+      href: "#", // Add actual LinkedIn URL
+      label: "LinkedIn",
     },
     {
       icon: Twitter,
-      href: '#', // Add actual Twitter URL
-      label: 'Twitter',
+      href: "#", // Add actual Twitter URL
+      label: "Twitter",
     },
-  ]
+  ];
 
   const quickLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Contact', href: '#contact' },
-  ]
+    { name: "Home", href: "#home" },
+    { name: "About", href: "#about" },
+    { name: "Projects", href: "#projects" },
+    { name: "Contact", href: "#contact" },
+  ];
 
   const handleNavClick = (e, href) => {
-    e.preventDefault()
-    const element = document.querySelector(href)
+    e.preventDefault();
+    const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+      element.scrollIntoView({ behavior: "smooth" });
     }
-  }
+  };
 
   return (
     <footer className="relative bg-secondary/20 border-t border-border">
@@ -90,7 +90,7 @@ export default function Footer() {
             <h4 className="font-semibold mb-4">Connect</h4>
             <div className="flex gap-4">
               {socialLinks.map((social) => {
-                const Icon = social.icon
+                const Icon = social.icon;
                 return (
                   <a
                     key={social.label}
@@ -102,7 +102,7 @@ export default function Footer() {
                   >
                     <Icon className="text-primary" size={20} />
                   </a>
-                )
+                );
               })}
             </div>
           </motion.div>
@@ -124,6 +124,5 @@ export default function Footer() {
         </motion.div>
       </div>
     </footer>
-  )
+  );
 }
-

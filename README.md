@@ -56,22 +56,26 @@ portfolio/
 ## 🛠️ Getting Started
 
 1. **Clone the repository:**
+
    ```bash
    git clone https://github.com/anuragthippani1/Portfolio.git
    cd Portfolio
    ```
 
 2. **Install dependencies:**
+
    ```bash
    npm install
    ```
 
 3. **Configure EmailJS (Optional):**
+
    - Sign up at [EmailJS](https://www.emailjs.com/)
    - Get your Service ID, Template ID, and Public Key
    - Update the credentials in `components/Contact.js`
 
 4. **Run the development server:**
+
    ```bash
    npm run dev
    ```
@@ -82,18 +86,23 @@ portfolio/
 ## 📝 Customization
 
 ### Update Projects
+
 Edit `data/projects.json` to add or modify your projects.
 
 ### Update GitHub Username
+
 In `components/GitHub.js`, update the username variable:
+
 ```javascript
-const username = 'your-github-username'
+const username = "your-github-username";
 ```
 
 ### Update Contact Information
+
 Edit the contact details in `components/Contact.js` and `components/Footer.js`.
 
 ### Modify Color Scheme
+
 Update the color variables in `app/globals.css` and `tailwind.config.js`.
 
 ## 🚀 Deployment
@@ -106,6 +115,7 @@ Update the color variables in `app/globals.css` and `tailwind.config.js`.
 4. Deploy!
 
 Or use the Vercel CLI:
+
 ```bash
 npm install -g vercel
 vercel
@@ -132,4 +142,3 @@ This project is open source and available under the [MIT License](LICENSE).
 ---
 
 **Built with ❤️ by Anurag Varma Thippani**
-

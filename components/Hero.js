@@ -1,22 +1,25 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { ArrowDown, Download, Mail, FolderGit2 } from 'lucide-react'
+import { motion } from "framer-motion";
+import { ArrowDown, Download, Mail, FolderGit2 } from "lucide-react";
 
 export default function Hero() {
   const handleScroll = (e, id) => {
-    e.preventDefault()
-    const element = document.querySelector(id)
+    e.preventDefault();
+    const element = document.querySelector(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+      element.scrollIntoView({ behavior: "smooth" });
     }
-  }
+  };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+    >
       {/* Animated gradient background */}
       <div className="absolute inset-0 animated-gradient opacity-20" />
-      
+
       {/* Grid overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
 
@@ -52,7 +55,8 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-lg md:text-xl text-foreground/60 max-w-3xl mx-auto"
           >
-            Building adaptive intelligence systems that solve real-world challenges.
+            Building adaptive intelligence systems that solve real-world
+            challenges.
           </motion.p>
 
           <motion.div
@@ -63,7 +67,7 @@ export default function Hero() {
           >
             <a
               href="#projects"
-              onClick={(e) => handleScroll(e, '#projects')}
+              onClick={(e) => handleScroll(e, "#projects")}
               className="group px-8 py-3 bg-primary text-primary-foreground rounded-full font-semibold flex items-center gap-2 hover:scale-105 transition-transform"
             >
               <FolderGit2 size={20} />
@@ -71,7 +75,7 @@ export default function Hero() {
             </a>
             <a
               href="#contact"
-              onClick={(e) => handleScroll(e, '#contact')}
+              onClick={(e) => handleScroll(e, "#contact")}
               className="px-8 py-3 glass rounded-full font-semibold flex items-center gap-2 hover:scale-105 transition-transform"
             >
               <Mail size={20} />
@@ -94,7 +98,7 @@ export default function Hero() {
           >
             <a
               href="#about"
-              onClick={(e) => handleScroll(e, '#about')}
+              onClick={(e) => handleScroll(e, "#about")}
               className="inline-block animate-bounce"
             >
               <ArrowDown size={32} className="text-primary" />
@@ -103,6 +107,5 @@ export default function Hero() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
-
