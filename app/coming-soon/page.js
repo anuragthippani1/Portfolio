@@ -50,9 +50,9 @@ export default function ComingSoon() {
           </div>
 
           <p className="text-lg text-foreground/60 max-w-md mx-auto leading-relaxed">
-            This project demo is currently being prepared for deployment. 
-            Check back soon to see it in action! In the meantime, you can 
-            explore the source code on GitHub.
+            This project demo is currently being prepared for deployment. Check
+            back soon to see it in action! In the meantime, you can explore the
+            source code on GitHub.
           </p>
 
           <div className="pt-8 flex flex-wrap gap-4 justify-center">
@@ -83,4 +83,3 @@ export default function ComingSoon() {
     </div>
   );
 }
-

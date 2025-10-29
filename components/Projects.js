@@ -80,8 +80,10 @@ export default function Projects() {
                       Code
                     </span>
                   )}
-                  
-                  {project.demo && project.demo !== "#" && project.demo !== "coming-soon" ? (
+
+                  {project.demo &&
+                  project.demo !== "#" &&
+                  project.demo !== "coming-soon" ? (
                     <a
                       href={project.demo}
                       target="_blank"
