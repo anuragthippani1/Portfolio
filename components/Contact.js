@@ -60,8 +60,8 @@ export default function Contact() {
     {
       icon: Mail,
       label: "Email",
-      value: "anuragthippani@gmail.com",
-      href: "mailto:anuragthippani@gmail.com",
+      value: "anuragthippani8@gmail.com",
+      href: "mailto:anuragthippani8@gmail.com",
     },
     {
       icon: Linkedin,

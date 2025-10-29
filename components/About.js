@@ -41,23 +41,51 @@ export default function About() {
   const badges = [
     {
       category: "Languages",
-      items: ["C", "Python", "Java", "JavaScript"],
+      items: [
+        { name: "C", logo: "devicon-c-plain" },
+        { name: "Python", logo: "devicon-python-plain" },
+        { name: "Java", logo: "devicon-java-plain" },
+        { name: "JavaScript", logo: "devicon-javascript-plain" },
+      ],
       icon: Code,
     },
     {
       category: "Frameworks",
-      items: ["MERN Stack", "Next.js", "Flask"],
+      items: [
+        { name: "React", logo: "devicon-react-original" },
+        { name: "Next.js", logo: "devicon-nextjs-plain" },
+        { name: "Flask", logo: "devicon-flask-original" },
+        { name: "Express", logo: "devicon-express-original" },
+      ],
       icon: Database,
     },
     {
       category: "AI/ML",
-      items: ["TensorFlow", "PyTorch", "scikit-learn"],
+      items: [
+        { name: "TensorFlow", logo: "devicon-tensorflow-original" },
+        { name: "PyTorch", logo: "devicon-pytorch-original" },
+        { name: "scikit-learn", logo: "devicon-scikitlearn-plain" },
+        { name: "Pandas", logo: "devicon-pandas-original" },
+      ],
       icon: Brain,
     },
-    { category: "Cloud & DB", items: ["AWS", "MongoDB", "MySQL"], icon: Cloud },
+    {
+      category: "Cloud & DB",
+      items: [
+        { name: "AWS", logo: "devicon-amazonwebservices-plain-wordmark" },
+        { name: "MongoDB", logo: "devicon-mongodb-plain" },
+        { name: "MySQL", logo: "devicon-mysql-plain" },
+        { name: "PostgreSQL", logo: "devicon-postgresql-plain" },
+      ],
+      icon: Cloud,
+    },
     {
       category: "Certifications",
-      items: ["AWS", "Cisco", "Microsoft"],
+      items: [
+        { name: "AWS Certified", logo: "devicon-amazonwebservices-plain-wordmark" },
+        { name: "Cisco", logo: "" },
+        { name: "Microsoft", logo: "devicon-azure-plain" },
+      ],
       icon: Award,
     },
   ];
@@ -110,14 +138,8 @@ export default function About() {
           >
             <p className="text-lg text-foreground/80 leading-relaxed">
               I'm <span className="text-primary font-semibold">Anurag</span>, a
-              final-year Computer Science undergraduate at
-              <span className="text-primary font-semibold">
-                {" "}
-                SR University
-              </span>{" "}
-              (2022–2026) passionate about Artificial Intelligence, Machine
-              Learning, and Full Stack Development. I specialize in building
-              intelligent systems and scalable web applications that merge
+              passionate Computer Science professional specializing in Artificial Intelligence, Machine
+              Learning, and Full Stack Development. I build intelligent systems and scalable web applications that merge
               innovation with real-world impact.
             </p>
 
@@ -138,16 +160,16 @@ export default function About() {
                   <p className="font-semibold">India</p>
                 </div>
                 <div className="glass p-4 rounded-lg">
-                  <p className="text-sm text-foreground/60">University</p>
-                  <p className="font-semibold">SR University</p>
+                  <p className="text-sm text-foreground/60">Specialization</p>
+                  <p className="font-semibold">AI & Full Stack</p>
                 </div>
                 <div className="glass p-4 rounded-lg">
-                  <p className="text-sm text-foreground/60">Graduation</p>
-                  <p className="font-semibold">2026</p>
+                  <p className="text-sm text-foreground/60">Experience</p>
+                  <p className="font-semibold">Multiple Projects</p>
                 </div>
                 <div className="glass p-4 rounded-lg">
-                  <p className="text-sm text-foreground/60">Degree</p>
-                  <p className="font-semibold">B.Tech CSE</p>
+                  <p className="text-sm text-foreground/60">Focus</p>
+                  <p className="font-semibold">ML & Web Dev</p>
                 </div>
               </div>
             </div>
@@ -183,14 +205,17 @@ export default function About() {
                     </div>
                     <h4 className="font-semibold text-lg">{badge.category}</h4>
                   </div>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-3">
                     {badge.items.map((item) => (
-                      <span
-                        key={item}
-                        className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full border border-primary/20"
+                      <div
+                        key={item.name}
+                        className="flex items-center gap-2 px-3 py-2 bg-primary/10 text-primary text-sm rounded-lg border border-primary/20 hover:scale-105 transition-transform"
                       >
-                        {item}
-                      </span>
+                        {item.logo && (
+                          <i className={`${item.logo} text-lg`}></i>
+                        )}
+                        <span>{item.name}</span>
+                      </div>
                     ))}
                   </div>
                 </motion.div>
