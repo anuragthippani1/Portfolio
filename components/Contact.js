@@ -12,7 +12,7 @@ export default function Contact() {
     message: "",
   });
   const [status, setStatus] = useState({ type: "", message: "" });
-  const [loading, setLoading] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -21,33 +21,48 @@ export default function Contact() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setStatus({ type: "", message: "" });
 
-    // Create mailto link with form data
-    const subject = encodeURIComponent(
-      `Portfolio Contact from ${formData.name}`
-    );
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    );
-    const mailtoLink = `mailto:anuragthippani8@gmail.com?subject=${subject}&body=${body}`;
+    // EmailJS Configuration
+    // TODO: Replace with your actual EmailJS credentials from https://www.emailjs.com
+    const SERVICE_ID = "service_portfolio"; // Your EmailJS Service ID
+    const TEMPLATE_ID = "template_portfolio"; // Your EmailJS Template ID
+    const USER_ID = "your_emailjs_user_id"; // Your EmailJS Public Key
 
-    // Open default email client
-    window.location.href = mailtoLink;
+    try {
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_email: "anuragthippani8@gmail.com",
+        },
+        USER_ID
+      );
 
-    // Show success message
-    setStatus({
-      type: "success",
-      message:
-        "Opening your email client... You can also email me directly at anuragthippani8@gmail.com",
-    });
-
-    // Reset form after a delay
-    setTimeout(() => {
-      setFormData({ name: "", email: "", message: "" });
-      setStatus({ type: "", message: "" });
-    }, 3000);
+      if (result.text === "OK") {
+        setStatus({
+          type: "success",
+          message: "✅ Message sent successfully! I'll get back to you soon.",
+        });
+        setFormData({ name: "", email: "", message: "" });
+      }
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      setStatus({
+        type: "error",
+        message:
+          "❌ Failed to send message. Please email me directly at anuragthippani8@gmail.com",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactLinks = [
@@ -233,15 +248,24 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="w-full px-8 py-3 bg-primary text-primary-foreground rounded-lg font-semibold flex items-center justify-center gap-2 hover:scale-105 transition-transform"
+                disabled={isSubmitting}
+                className="w-full px-8 py-3 bg-primary text-primary-foreground rounded-lg font-semibold flex items-center justify-center gap-2 hover:scale-105 transition-transform disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
-                <Send size={20} />
-                Send Message via Email
+                {isSubmitting ? (
+                  <>
+                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    <Send size={20} />
+                    Send Message
+                  </>
+                )}
               </button>
 
               <p className="text-xs text-center text-foreground/60">
-                This will open your default email client with the message
-                pre-filled
+                Your message will be sent directly to my email inbox
               </p>
             </form>
           </motion.div>
