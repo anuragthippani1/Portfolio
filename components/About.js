@@ -82,7 +82,10 @@ export default function About() {
     {
       category: "Certifications",
       items: [
-        { name: "AWS Certified", logo: "devicon-amazonwebservices-plain-wordmark" },
+        {
+          name: "AWS Certified",
+          logo: "devicon-amazonwebservices-plain-wordmark",
+        },
         { name: "Cisco", logo: "" },
         { name: "Microsoft", logo: "devicon-azure-plain" },
       ],
@@ -138,9 +141,10 @@ export default function About() {
           >
             <p className="text-lg text-foreground/80 leading-relaxed">
               I'm <span className="text-primary font-semibold">Anurag</span>, a
-              passionate Computer Science professional specializing in Artificial Intelligence, Machine
-              Learning, and Full Stack Development. I build intelligent systems and scalable web applications that merge
-              innovation with real-world impact.
+              passionate Computer Science professional specializing in
+              Artificial Intelligence, Machine Learning, and Full Stack
+              Development. I build intelligent systems and scalable web
+              applications that merge innovation with real-world impact.
             </p>
 
             <p className="text-lg text-foreground/80 leading-relaxed">

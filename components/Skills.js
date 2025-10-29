@@ -135,11 +135,12 @@ export default function Skills() {
 
                 <div className="space-y-3">
                   {category.skills.map((skill) => (
-                    <div key={skill.name} className="flex items-center gap-3 p-3 bg-secondary/50 rounded-lg hover:bg-secondary transition-colors">
+                    <div
+                      key={skill.name}
+                      className="flex items-center gap-3 p-3 bg-secondary/50 rounded-lg hover:bg-secondary transition-colors"
+                    >
                       <div className="h-2 w-2 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full"></div>
-                      <span className="text-sm font-medium">
-                        {skill.name}
-                      </span>
+                      <span className="text-sm font-medium">{skill.name}</span>
                     </div>
                   ))}
                 </div>
