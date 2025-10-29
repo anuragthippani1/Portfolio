@@ -4,8 +4,8 @@
     "title": "SentriX: AI Sentinel for Global Supply Chain Risk Detection",
     "description": "AI agent system that predicts and detects real-time supply chain risks using ML and predictive analytics.",
     "techStack": ["Python", "Flask", "TensorFlow", "MongoDB", "Cloud APIs"],
-    "github": "#",
-    "demo": "#",
+    "github": "https://github.com/anuragthippani1/SentriX",
+    "demo": "https://sentri-x-t8bl.vercel.app",
     "featured": true
   },
   {
@@ -13,8 +13,8 @@
     "title": "AI-Based Return Abuse Detection System",
     "description": "Built for Walmart Sparkathon; detects fraudulent return behaviors using machine learning classifiers.",
     "techStack": ["Python", "scikit-learn", "Streamlit", "Flask API", "MongoDB"],
-    "github": "#",
-    "demo": "#",
+    "github": "https://github.com/anuragthippani1/return_abuse_detection_system",
+    "demo": "https://github.com/anuragthippani1/return_abuse_detection_system",
     "featured": true
   },
   {
