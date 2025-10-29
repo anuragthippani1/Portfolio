@@ -7,14 +7,14 @@ export default function Patents() {
   const patents = [
     {
       id: 1,
-      title: "Your Patent Title",
-      patentNumber: "Patent No: XXXXXXXXX",
-      status: "Published", // or "Pending", "Granted"
-      date: "2024",
+      title: "System for Lung Nodule Detection Using AI and Deep Learning",
+      patentNumber: "Application No. 202541013900 A",
+      status: "Published",
+      date: "28 February 2025",
       description:
-        "Brief description of your patent invention and its applications.",
-      inventors: ["Anurag Varma Thippani"],
-      field: "Artificial Intelligence / Machine Learning",
+        "An AI-powered system designed to assist in the automated detection and classification of lung nodules from CT scan images. Integrates Convolutional Neural Networks (CNNs), Region Proposal Networks (RPNs), and 3D CNNs to automatically pre-process CT images, identify candidate regions, and classify nodules as benign or malignant. The system continuously improves through feedback from radiologists, offers automated alerts, and supports integration into clinical workflows, ensuring timely medical intervention. Compliant with HIPAA and GDPR regulatory standards.",
+      inventors: ["Anurag Varma Thippani", "SR University"],
+      field: "Artificial Intelligence, Medical Imaging, Deep Learning",
     },
     // Add more patents as needed
   ];
