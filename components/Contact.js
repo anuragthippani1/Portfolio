@@ -27,14 +27,17 @@ export default function Contact() {
 
     // Web3Forms API - Simple and FREE!
     // Get your access key from: https://web3forms.com (takes 1 minute)
-    const ACCESS_KEY = "YOUR_WEB3FORMS_ACCESS_KEY"; // Replace with your key
+    const ACCESS_KEY = "966f5a9a-33bf-4a3a-bdc6-63222b88ddaa";
 
     const formDataToSend = new FormData();
     formDataToSend.append("access_key", ACCESS_KEY);
     formDataToSend.append("name", formData.name);
     formDataToSend.append("email", formData.email);
     formDataToSend.append("message", formData.message);
-    formDataToSend.append("subject", `New Portfolio Contact from ${formData.name}`);
+    formDataToSend.append(
+      "subject",
+      `New Portfolio Contact from ${formData.name}`
+    );
     formDataToSend.append("from_name", "Portfolio Contact Form");
 
     try {
