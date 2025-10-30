@@ -23,7 +23,7 @@
     "description": "Classifies user complaints automatically using ML and Flask web integration.",
     "techStack": ["Python", "Flask", "MongoDB", "scikit-learn"],
     "github": "https://github.com/anuragthippani1/Enterprise-Complaint-Intelligence-System",
-    "demo": "coming-soon",
+    "demo": "https://enterprise-complaint-intelligence-s.vercel.app",
     "featured": false
   },
   {
