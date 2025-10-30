@@ -42,7 +42,6 @@ export default function About() {
     {
       category: "Languages",
       items: [
-        { name: "C", logo: "devicon-c-plain" },
         { name: "Python", logo: "devicon-python-plain" },
         { name: "Java", logo: "devicon-java-plain" },
         { name: "JavaScript", logo: "devicon-javascript-plain" },
