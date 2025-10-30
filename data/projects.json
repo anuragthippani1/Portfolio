@@ -43,5 +43,23 @@
     "github": "https://github.com/anuragthippani1/Canteen-Management-and-Billing-System-",
     "demo": "coming-soon",
     "featured": false
+  },
+  {
+    "id": 6,
+    "title": "Zerodha Clone - Trading Platform",
+    "description": "Full-stack clone of Zerodha with landing, trading dashboard, and REST API backend.",
+    "techStack": [
+      "React",
+      "Chart.js",
+      "Material-UI",
+      "Bootstrap",
+      "Node.js",
+      "Express",
+      "MongoDB"
+    ],
+    "github": "https://github.com/anuragthippani1/ZerodhaClone",
+    "demo": "https://zerodha-clone-two-ochre.vercel.app",
+    "demo2": "https://zerodha-clone-b7tu.vercel.app",
+    "featured": false
   }
 ]

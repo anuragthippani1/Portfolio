@@ -63,7 +63,7 @@ export default function Projects() {
                   ))}
                 </div>
 
-                <div className="flex gap-4">
+                <div className="flex gap-4 flex-wrap">
                   {project.github && project.github !== "#" ? (
                     <a
                       href={project.github}
@@ -81,9 +81,7 @@ export default function Projects() {
                     </span>
                   )}
 
-                  {project.demo &&
-                  project.demo !== "#" &&
-                  project.demo !== "coming-soon" ? (
+                  {project.demo && project.demo !== "#" && project.demo !== "coming-soon" ? (
                     <a
                       href={project.demo}
                       target="_blank"
@@ -104,6 +102,18 @@ export default function Projects() {
                       Coming Soon
                     </a>
                   )}
+
+                  {project.demo2 && project.demo2 !== "#" ? (
+                    <a
+                      href={project.demo2}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-sm text-foreground/70 hover:text-primary transition-colors"
+                    >
+                      <ExternalLink size={18} />
+                      Dashboard
+                    </a>
+                  ) : null}
                 </div>
               </div>
             </motion.div>
