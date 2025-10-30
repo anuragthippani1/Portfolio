@@ -137,3 +137,5 @@ If you encounter any issues:
 1. Check the Next.js documentation: https://nextjs.org/docs
 2. Check Vercel documentation: https://vercel.com/docs
 3. Review the README.md file
+
+

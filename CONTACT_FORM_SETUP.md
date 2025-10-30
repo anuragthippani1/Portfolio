@@ -29,6 +29,7 @@ const ACCESS_KEY = "abc123-def456-ghi789"; // Your actual key here
 ```
 
 **Example:**
+
 ```javascript
 const ACCESS_KEY = "e3b0c442-98fc-1c14-9afb-f4c8996fb924";
 ```
@@ -57,11 +58,13 @@ const ACCESS_KEY = "e3b0c442-98fc-1c14-9afb-f4c8996fb924";
 ## 🎯 What You'll Receive
 
 **Email Subject:**
+
 ```
 New Portfolio Contact from [Name]
 ```
 
 **Email Body:**
+
 ```
 Name: John Doe
 Email: john@example.com
@@ -86,6 +89,7 @@ Message: Hi! I'd like to work with you on a project...
 ### Issue: "Failed to send message"
 
 **Solution:** Make sure you:
+
 1. Replaced `YOUR_WEB3FORMS_ACCESS_KEY` with your actual key
 2. Verified your email (check spam folder)
 3. Have internet connection
@@ -93,6 +97,7 @@ Message: Hi! I'd like to work with you on a project...
 ### Issue: "Not receiving emails"
 
 **Check:**
+
 1. Spam/junk folder
 2. Email used on web3forms.com matches `anuragthippani8@gmail.com`
 3. Verify your email was confirmed (check confirmation email)
@@ -100,6 +105,7 @@ Message: Hi! I'd like to work with you on a project...
 ### Issue: "Invalid access key"
 
 **Solution:**
+
 - Make sure you copied the entire access key (no spaces)
 - Check if you verified your email
 - Try creating a new access key
@@ -109,6 +115,7 @@ Message: Hi! I'd like to work with you on a project...
 ## 📊 Monitor Your Messages
 
 **View Submissions:**
+
 1. Go to [https://web3forms.com](https://web3forms.com)
 2. Enter your email: `anuragthippani8@gmail.com`
 3. You'll receive a login link
@@ -121,16 +128,19 @@ Message: Hi! I'd like to work with you on a project...
 For better security, use environment variables:
 
 1. Create `.env.local`:
+
 ```bash
 NEXT_PUBLIC_WEB3FORMS_KEY=your_access_key_here
 ```
 
 2. Update `components/Contact.js`:
+
 ```javascript
 const ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
 ```
 
 3. Add to `.gitignore`:
+
 ```
 .env.local
 ```
@@ -141,13 +151,13 @@ const ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
 
 ## 🆚 Why Web3Forms vs EmailJS?
 
-| Feature | Web3Forms | EmailJS |
-|---------|-----------|---------|
-| Setup Time | 1 minute | 5-10 minutes |
-| Free Tier | 250/month | 200/month |
-| Configuration | 1 key | 3 keys (Service, Template, User) |
-| Template Setup | Not needed | Required |
-| Ease of Use | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ |
+| Feature        | Web3Forms  | EmailJS                          |
+| -------------- | ---------- | -------------------------------- |
+| Setup Time     | 1 minute   | 5-10 minutes                     |
+| Free Tier      | 250/month  | 200/month                        |
+| Configuration  | 1 key      | 3 keys (Service, Template, User) |
+| Template Setup | Not needed | Required                         |
+| Ease of Use    | ⭐⭐⭐⭐⭐ | ⭐⭐⭐                           |
 
 ---
 
@@ -160,7 +170,7 @@ const ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
 
 ## ✨ You're Done!
 
-Once you add your access key, your contact form will work perfectly! 
+Once you add your access key, your contact form will work perfectly!
 
 Anyone who fills out the form will send a message directly to your inbox at **anuragthippani8@gmail.com** 🎉
 
@@ -169,4 +179,5 @@ Anyone who fills out the form will send a message directly to your inbox at **an
 **Total Setup Time:** 60 seconds ⏱️
 **Cost:** FREE Forever 💰
 **Effort:** Minimal 🎯
+
 
