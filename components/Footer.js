@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Linkedin, Twitter, Heart } from "lucide-react";
+import { Github, Linkedin, Heart } from "lucide-react";
 
 export default function Footer() {
   const socialLinks = [
@@ -14,11 +14,6 @@ export default function Footer() {
       icon: Linkedin,
       href: "https://www.linkedin.com/in/anuragvarmathippani/",
       label: "LinkedIn",
-    },
-    {
-      icon: Twitter,
-      href: "#", // Add actual Twitter URL
-      label: "Twitter",
     },
   ];
 

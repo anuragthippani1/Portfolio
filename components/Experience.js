@@ -23,30 +23,6 @@ export default function Experience() {
         "Generative AI",
       ],
     },
-    {
-      id: 2,
-      title: "Research Intern",
-      company: "AI Research Lab",
-      period: "2024 - Present",
-      description:
-        "Worked on machine learning model evaluation, data preprocessing, and AI system design. Contributed to research papers and implemented novel ML algorithms.",
-      skills: [
-        "Machine Learning",
-        "Python",
-        "TensorFlow",
-        "Data Analysis",
-        "Research",
-      ],
-    },
-    {
-      id: 3,
-      title: "Full Stack Development Intern",
-      company: "Tech Solutions Inc.",
-      period: "2023 - 2024",
-      description:
-        "Developed REST APIs, front-end dashboards, and implemented authentication systems. Built scalable web applications using MERN stack.",
-      skills: ["React", "Node.js", "MongoDB", "Express", "REST API"],
-    },
   ];
 
   return (

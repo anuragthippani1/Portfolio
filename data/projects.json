@@ -24,7 +24,7 @@
     "techStack": ["Python", "Flask", "MongoDB", "scikit-learn"],
     "github": "https://github.com/anuragthippani1/Enterprise-Complaint-Intelligence-System",
     "demo": "https://enterprise-complaint-intelligence-s.vercel.app",
-    "featured": false
+    "featured": true
   },
   {
     "id": 4,
@@ -32,15 +32,6 @@
     "description": "Deep learning model that identifies pneumonia from X-ray images.",
     "techStack": ["TensorFlow", "Flask", "React", "MongoDB"],
     "github": "https://github.com/anuragthippani1/Pneumonia-Detection-",
-    "demo": "coming-soon",
-    "featured": true
-  },
-  {
-    "id": 5,
-    "title": "Canteen Management System (Modernized C Project)",
-    "description": "Futuristic version of my 1st-year project with GUI and file I/O system.",
-    "techStack": ["C++", "File System", "UI Enhancement"],
-    "github": "https://github.com/anuragthippani1/Canteen-Management-and-Billing-System-",
     "demo": "coming-soon",
     "featured": false
   },
@@ -60,6 +51,15 @@
     "github": "https://github.com/anuragthippani1/ZerodhaClone",
     "demo": "https://zerodha-clone-two-ochre.vercel.app",
     "demo2": "https://zerodha-clone-b7tu.vercel.app",
+    "featured": false
+  },
+  {
+    "id": 5,
+    "title": "Canteen Management System (Modernized C Project)",
+    "description": "Futuristic version of my 1st-year project with GUI and file I/O system.",
+    "techStack": ["C++", "File System", "UI Enhancement"],
+    "github": "https://github.com/anuragthippani1/Canteen-Management-and-Billing-System-",
+    "demo": "coming-soon",
     "featured": false
   }
 ]
