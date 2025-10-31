@@ -7,6 +7,24 @@ export default function Experience() {
   const experiences = [
     {
       id: 1,
+      title: "AI Research Intern",
+      company: "LogicWhile Technologies, Hyderabad, India",
+      period: "Dec 2024 – May 2025",
+      description:
+        "Worked on AI-driven automation and Generative AI research. Built real-time AI prototypes with Python, Flask, TensorFlow and MERN; designed adaptive learning algorithms, automated data pipelines, and helped deploy ML models to edge and cloud for scalable performance; authored project docs and model evaluation reports.",
+      skills: [
+        "Python",
+        "TensorFlow",
+        "Flask",
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Machine Learning",
+        "Generative AI",
+      ],
+    },
+    {
+      id: 2,
       title: "Research Intern",
       company: "AI Research Lab",
       period: "2024 - Present",
@@ -21,7 +39,7 @@ export default function Experience() {
       ],
     },
     {
-      id: 2,
+      id: 3,
       title: "Full Stack Development Intern",
       company: "Tech Solutions Inc.",
       period: "2023 - 2024",
@@ -104,5 +122,6 @@ export default function Experience() {
     </section>
   );
 }
+
 
 
