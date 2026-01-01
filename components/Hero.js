@@ -56,7 +56,8 @@ export default function Hero() {
               transition={{ duration: 0.7, delay: 0.35 }}
               className="mt-4 text-foreground/60 max-w-prose"
             >
-              Building intelligent, high-impact products with a clean, minimal aesthetic.
+              Building intelligent, high-impact products with a clean, minimal
+              aesthetic.
             </motion.p>
 
             <motion.div
@@ -105,7 +106,7 @@ export default function Hero() {
               <div className="absolute bottom-1/3 left-1/3 w-24 h-24 border border-foreground/10 rotate-45" />
               <div className="absolute top-1/2 right-1/3 w-16 h-16 bg-foreground/5 rounded-full" />
             </div>
-            
+
             {/* Floating elements */}
             <motion.div
               animate={{ y: [-10, 10, -10] }}
@@ -114,12 +115,22 @@ export default function Hero() {
             />
             <motion.div
               animate={{ y: [10, -10, 10] }}
-              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 1,
+              }}
               className="absolute bottom-1/3 right-1/4 w-1 h-1 bg-foreground/30 rounded-full"
             />
             <motion.div
               animate={{ y: [-5, 15, -5] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 2,
+              }}
               className="absolute top-1/2 left-1/2 w-1.5 h-1.5 bg-foreground/25 rounded-full"
             />
           </motion.div>
@@ -144,5 +155,3 @@ export default function Hero() {
     </section>
   );
 }
-
-
