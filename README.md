@@ -108,6 +108,7 @@ Update the color variables in `app/globals.css` and `tailwind.config.js`.
 ## 🚀 Deployment
 
 ### Deploy to Vercel
+--
 
 1. Push your code to GitHub
 2. Go to [Vercel](https://vercel.com/)
@@ -122,6 +123,8 @@ vercel
 ```
 
 ## 📧 Contact
+
+
 
 - **Email:** anuragthippani@gmail.com
 - **GitHub:** [@anuragthippani1](https://github.com/anuragthippani1)
