@@ -85,7 +85,7 @@ export default function Hero() {
                 Contact
               </a>
               <a
-                href="/resume.pdf"
+                href="https://drive.google.com/file/d/16X8SmuAvmFebYC7SDX6qdgPh2PuL8Bgd/view?usp=share_link"
                 className="inline-flex items-center gap-2 px-6 py-2 rounded-full border border-foreground/30 text-foreground/80 hover:bg-foreground/10 transition-colors"
               >
                 <Download size={18} />

@@ -23,13 +23,19 @@ export default function Navbar() {
     { name: "Projects", href: "#projects" },
     { name: "Experience", href: "#experience" },
     { name: "Patents", href: "#patents" },
-    { name: "Resume", href: "/resume.pdf" },
+    {
+      name: "Resume",
+      href: "https://drive.google.com/file/d/16X8SmuAvmFebYC7SDX6qdgPh2PuL8Bgd/view?usp=share_link",
+    },
     { name: "Contact", href: "#contact" },
   ];
 
   const handleNavClick = (e, href) => {
     // Allow default behavior for resume link
-    if (href === "/resume.pdf") {
+    if (
+      href ===
+      "https://drive.google.com/file/d/16X8SmuAvmFebYC7SDX6qdgPh2PuL8Bgd/view?usp=share_link"
+    ) {
       setIsOpen(false);
       return;
     }
