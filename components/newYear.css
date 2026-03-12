@@ -28,6 +28,7 @@
   cursor: pointer;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
+  max-width: calc(100vw - 40px); /* Prevent overflow on small screens */
 }
 
 .sound-button:hover {
@@ -123,6 +124,7 @@
   clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
   animation: ribbon-fall cubic-bezier(0.4, 0, 0.2, 1) forwards;
   opacity: 0.7;
+  max-width: calc(100vw - 20px); /* Ensure ribbon doesn't exceed viewport */
 }
 
 @keyframes ribbon-fall {

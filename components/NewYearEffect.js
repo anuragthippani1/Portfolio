@@ -82,9 +82,10 @@ export default function NewYearEffect() {
   if (!shouldShow) return null;
 
   // Generate particles for different layers
+  // Clamp left position to 0-95% to prevent overflow
   const confettiParticles = Array.from({ length: 40 }, (_, i) => ({
     id: i,
-    left: Math.random() * 100,
+    left: Math.random() * 95, // Max 95% to prevent overflow
     delay: Math.random() * 2,
     duration: 6 + Math.random() * 2,
     size: 6 + Math.random() * 4,
@@ -92,7 +93,7 @@ export default function NewYearEffect() {
 
   const ribbonParticles = Array.from({ length: 12 }, (_, i) => ({
     id: i,
-    left: Math.random() * 100,
+    left: Math.random() * 95, // Max 95% to prevent overflow
     delay: Math.random() * 1.5,
     duration: 8 + Math.random() * 2,
     width: 20 + Math.random() * 15,
@@ -101,7 +102,9 @@ export default function NewYearEffect() {
   const fireworkParticles = Array.from({ length: 24 }, (_, i) => {
     const angle = (i * 360) / 24;
     const radians = (angle * Math.PI) / 180;
-    const distance = 200;
+    // Use 150px distance to ensure particles stay within viewport on all screens
+    // Firework is centered, so particles won't exceed bounds
+    const distance = 150;
     return {
       id: i,
       x: Math.cos(radians) * distance,

@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import { ArrowDown, Download, Mail, FolderGit2 } from "lucide-react";
+import Image from "next/image";
+import profilePhoto from "@/lib/logo.PNG";
 
 export default function Hero() {
   const handleScroll = (e, id) => {
@@ -105,6 +107,31 @@ export default function Hero() {
               <div className="absolute top-1/4 right-1/4 w-32 h-32 border border-foreground/10 rounded-full" />
               <div className="absolute bottom-1/3 left-1/3 w-24 h-24 border border-foreground/10 rotate-45" />
               <div className="absolute top-1/2 right-1/3 w-16 h-16 bg-foreground/5 rounded-full" />
+            </div>
+
+            {/* Profile photo */}
+            <div className="relative z-10">
+              <div className="relative">
+                {/* soft halo */}
+                <div
+                  aria-hidden
+                  className="absolute -inset-10 rounded-full blur-3xl opacity-35 bg-gradient-to-tr from-blue-500/45 via-purple-500/35 to-pink-500/45"
+                />
+
+                {/* premium gradient ring */}
+                <div className="relative p-[2px] rounded-full bg-gradient-to-tr from-blue-500/60 via-purple-500/40 to-pink-500/60 shadow-[0_18px_60px_rgba(0,0,0,0.25)]">
+                  <div className="relative w-56 h-56 sm:w-60 sm:h-60 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden bg-background ring-1 ring-foreground/10">
+                    <Image
+                      src={profilePhoto}
+                      alt="Anurag Varma Thippani"
+                      fill
+                      priority
+                      sizes="(max-width: 640px) 240px, (max-width: 1024px) 288px, 320px"
+                      className="object-cover object-[50%_48%] scale-[1.24] transform-gpu [filter:saturate(1.08)_contrast(1.06)]"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Floating elements */}
