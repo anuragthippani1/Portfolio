@@ -35,6 +35,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# local resume copy (served via Google Drive link)
+/lib/anurag_resume.pdf
+
 
 
 
