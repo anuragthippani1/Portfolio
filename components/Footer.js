@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Github, Linkedin, Heart } from "lucide-react";
+import { RESUME_URL } from "@/lib/links";
 
 export default function Footer() {
   const socialLinks = [
@@ -23,19 +24,13 @@ export default function Footer() {
     { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
     { name: "Patents", href: "#patents" },
-    {
-      name: "Resume",
-      href: "https://drive.google.com/file/d/16X8SmuAvmFebYC7SDX6qdgPh2PuL8Bgd/view?usp=share_link",
-    },
+    { name: "Resume", href: RESUME_URL },
     { name: "Contact", href: "#contact" },
   ];
 
   const handleNavClick = (e, href) => {
     // Allow default behavior for resume link
-    if (
-      href ===
-      "https://drive.google.com/file/d/16X8SmuAvmFebYC7SDX6qdgPh2PuL8Bgd/view?usp=share_link"
-    ) {
+    if (href === RESUME_URL) {
       return;
     }
     e.preventDefault();
@@ -79,6 +74,9 @@ export default function Footer() {
                   <a
                     href={link.href}
                     onClick={(e) => handleNavClick(e, link.href)}
+                    {...(link.href === RESUME_URL
+                      ? { target: "_blank", rel: "noopener noreferrer" }
+                      : {})}
                     className="text-foreground/60 hover:text-primary transition-colors text-sm"
                   >
                     {link.name}

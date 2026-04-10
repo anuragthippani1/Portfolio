@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowDown, Download, Mail, FolderGit2 } from "lucide-react";
 import Image from "next/image";
 import profilePhoto from "@/lib/logo.PNG";
+import { RESUME_URL } from "@/lib/links";
 
 export default function Hero() {
   const handleScroll = (e, id) => {
@@ -85,7 +86,9 @@ export default function Hero() {
                 Contact
               </a>
               <a
-                href="https://drive.google.com/file/d/16X8SmuAvmFebYC7SDX6qdgPh2PuL8Bgd/view?usp=share_link"
+                href={RESUME_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-2 rounded-full border border-foreground/30 text-foreground/80 hover:bg-foreground/10 transition-colors"
               >
                 <Download size={18} />

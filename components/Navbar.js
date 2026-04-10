@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { RESUME_URL } from "@/lib/links";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,19 +24,13 @@ export default function Navbar() {
     { name: "Projects", href: "#projects" },
     { name: "Experience", href: "#experience" },
     { name: "Patents", href: "#patents" },
-    {
-      name: "Resume",
-      href: "https://drive.google.com/file/d/16X8SmuAvmFebYC7SDX6qdgPh2PuL8Bgd/view?usp=share_link",
-    },
+    { name: "Resume", href: RESUME_URL },
     { name: "Contact", href: "#contact" },
   ];
 
   const handleNavClick = (e, href) => {
     // Allow default behavior for resume link
-    if (
-      href ===
-      "https://drive.google.com/file/d/16X8SmuAvmFebYC7SDX6qdgPh2PuL8Bgd/view?usp=share_link"
-    ) {
+    if (href === RESUME_URL) {
       setIsOpen(false);
       return;
     }
@@ -76,6 +71,9 @@ export default function Navbar() {
                   key={item.name}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
+                  {...(item.href === RESUME_URL
+                    ? { target: "_blank", rel: "noopener noreferrer" }
+                    : {})}
                   className="text-foreground/80 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors"
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -116,6 +114,9 @@ export default function Navbar() {
                   key={item.name}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
+                  {...(item.href === RESUME_URL
+                    ? { target: "_blank", rel: "noopener noreferrer" }
+                    : {})}
                   className="text-foreground/80 hover:text-primary block px-3 py-2 rounded-md text-base font-medium transition-colors"
                 >
                   {item.name}
