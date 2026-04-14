@@ -36,6 +36,15 @@
     "featured": false
   },
   {
+    "id": 7,
+    "title": "ChainOps AI — Supply Chain Risk Intelligence",
+    "description": "Maritime & supply chain intelligence dashboard with risk zones, chokepoints, route analysis, alerts, and an AI assistant.",
+    "techStack": ["React", "Tailwind CSS", "FastAPI", "Python", "MongoDB"],
+    "github": "https://github.com/anuragthippani1/ChainOps-Ai",
+    "demo": "https://chainops-ai-1.onrender.com",
+    "featured": true
+  },
+  {
     "id": 6,
     "title": "Zerodha Clone - Trading Platform",
     "description": "Full-stack clone of Zerodha with landing, trading dashboard, and REST API backend.",
