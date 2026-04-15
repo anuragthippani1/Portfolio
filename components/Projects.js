@@ -5,6 +5,13 @@ import { ExternalLink, Github, Sparkles } from "lucide-react";
 import projectsData from "@/data/projects.json";
 
 export default function Projects() {
+  const sortedProjects = [...projectsData].sort((a, b) => {
+    const aFeatured = a.featured ? 1 : 0;
+    const bFeatured = b.featured ? 1 : 0;
+    if (aFeatured !== bFeatured) return bFeatured - aFeatured;
+    return (a.id ?? 0) - (b.id ?? 0);
+  });
+
   return (
     <section id="projects" className="py-20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -25,7 +32,7 @@ export default function Projects() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projectsData.map((project, index) => (
+          {sortedProjects.map((project, index) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 30 }}
