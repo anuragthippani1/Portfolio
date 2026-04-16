@@ -23,6 +23,10 @@ A stunning, responsive, and futuristic developer portfolio website built with mo
 - 🎯 SEO optimized
 - 🚀 Fast and performant
 
+## 🔥 Highlight Project
+
+- **ChainOps AI**: Repo `https://github.com/anuragthippani1/ChainOps-Ai` • Demo `https://chainops-ai-1.onrender.com`
+
 ## 📁 Project Structure
 
 ```
