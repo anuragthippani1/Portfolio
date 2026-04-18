@@ -2,10 +2,7 @@
 
 import * as React from "react";
 
-const ThemeContext = React.createContext({
-  theme: "dark",
-  setTheme: () => null,
-});
+const ThemeContext = React.createContext(undefined);
 
 export function ThemeProvider({ children, defaultTheme = "dark", ...props }) {
   const [theme, setTheme] = React.useState(defaultTheme);
@@ -28,16 +25,15 @@ export function ThemeProvider({ children, defaultTheme = "dark", ...props }) {
     localStorage.setItem("theme", theme);
   }, [theme, mounted]);
 
-  const value = {
-    theme,
-    setTheme: (newTheme) => {
-      setTheme(newTheme);
-    },
-  };
-
-  if (!mounted) {
-    return <>{children}</>;
-  }
+  const value = React.useMemo(
+    () => ({
+      theme,
+      setTheme: (newTheme) => {
+        setTheme(newTheme);
+      },
+    }),
+    [theme]
+  );
 
   return (
     <ThemeContext.Provider {...props} value={value}>
