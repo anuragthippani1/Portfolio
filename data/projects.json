@@ -45,6 +45,15 @@
     "featured": true
   },
   {
+    "id": 8,
+    "title": "DocFlow RAG — Agentic Supply Chain Intelligence",
+    "description": "Agentic RAG system: upload PDFs, query with FAISS + OpenRouter, and get multi-agent supply chain risk analysis with supplier, inventory, logistics, and final decision support.",
+    "techStack": ["FastAPI", "LangChain", "FAISS", "OpenRouter", "RAG", "Python"],
+    "github": "https://github.com/anuragthippani1/DocFlow-RAG",
+    "demo": "coming-soon",
+    "featured": true
+  },
+  {
     "id": 6,
     "title": "Zerodha Clone - Trading Platform",
     "description": "Full-stack clone of Zerodha with landing, trading dashboard, and REST API backend.",
