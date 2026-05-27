@@ -11,7 +11,7 @@ export function ThemeProvider({ children, defaultTheme = "dark", ...props }) {
   React.useEffect(() => {
     setMounted(true);
     const stored = localStorage.getItem("theme");
-    if (stored) {
+    if (stored === "light" || stored === "dark") {
       setTheme(stored);
     }
   }, []);
@@ -49,9 +49,6 @@ export const useTheme = () => {
   }
   return context;
 };
-
-
-
 
 
 

@@ -133,7 +133,7 @@ vercel
 
 - **Email:** anuragthippani@gmail.com
 - **GitHub:** [@anuragthippani1](https://github.com/anuragthippani1)
-- **LinkedIn:** [Add your LinkedIn]
+- **LinkedIn:** [anuragvarmathippani](https://www.linkedin.com/in/anuragvarmathippani/)
 
 ## 📄 License
 
