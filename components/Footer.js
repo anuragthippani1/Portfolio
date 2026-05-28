@@ -2,18 +2,18 @@
 
 import { motion } from "framer-motion";
 import { Github, Linkedin, Heart } from "lucide-react";
-import { RESUME_URL } from "@/lib/links";
+import { GITHUB_URL, LINKEDIN_URL, RESUME_URL } from "@/lib/links";
 
 export default function Footer() {
   const socialLinks = [
     {
       icon: Github,
-      href: "https://github.com/anuragthippani1",
+      href: GITHUB_URL,
       label: "GitHub",
     },
     {
       icon: Linkedin,
-      href: "https://www.linkedin.com/in/anuragvarmathippani/",
+      href: LINKEDIN_URL,
       label: "LinkedIn",
     },
   ];
