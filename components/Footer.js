@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, Heart } from "lucide-react";
 import { GITHUB_URL, LINKEDIN_URL, RESUME_URL } from "@/lib/links";
+import { isExternalHref } from "@/lib/navigation";
 
 export default function Footer() {
   const socialLinks = [
@@ -29,8 +30,7 @@ export default function Footer() {
   ];
 
   const handleNavClick = (e, href) => {
-    // Allow default behavior for resume link
-    if (href === RESUME_URL) {
+    if (isExternalHref(href)) {
       return;
     }
     e.preventDefault();
@@ -74,7 +74,7 @@ export default function Footer() {
                   <a
                     href={link.href}
                     onClick={(e) => handleNavClick(e, link.href)}
-                    {...(link.href === RESUME_URL
+                    {...(isExternalHref(link.href)
                       ? { target: "_blank", rel: "noopener noreferrer" }
                       : {})}
                     className="text-foreground/60 hover:text-primary transition-colors text-sm"

@@ -13,7 +13,10 @@ export function ThemeProvider({ children, defaultTheme = "dark", ...props }) {
     const stored = localStorage.getItem("theme");
     if (stored === "light" || stored === "dark") {
       setTheme(stored);
+      return;
     }
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    setTheme(prefersDark ? "dark" : "light");
   }, []);
 
   React.useEffect(() => {

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { RESUME_URL } from "@/lib/links";
+import { isExternalHref } from "@/lib/navigation";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,8 +30,7 @@ export default function Navbar() {
   ];
 
   const handleNavClick = (e, href) => {
-    // Allow default behavior for resume link
-    if (href === RESUME_URL) {
+    if (isExternalHref(href)) {
       setIsOpen(false);
       return;
     }
@@ -71,7 +71,7 @@ export default function Navbar() {
                   key={item.name}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
-                  {...(item.href === RESUME_URL
+                  {...(isExternalHref(item.href)
                     ? { target: "_blank", rel: "noopener noreferrer" }
                     : {})}
                   className="text-foreground/80 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors"
@@ -114,7 +114,7 @@ export default function Navbar() {
                   key={item.name}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
-                  {...(item.href === RESUME_URL
+                  {...(isExternalHref(item.href)
                     ? { target: "_blank", rel: "noopener noreferrer" }
                     : {})}
                   className="text-foreground/80 hover:text-primary block px-3 py-2 rounded-md text-base font-medium transition-colors"

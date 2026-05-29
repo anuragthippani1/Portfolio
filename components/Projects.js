@@ -1,16 +1,33 @@
 "use client";
 
+import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { ExternalLink, Github, Sparkles } from "lucide-react";
 import projectsData from "@/data/projects.json";
 
+const FILTERS = [
+  { id: "all", label: "All" },
+  { id: "featured", label: "Featured" },
+];
+
 export default function Projects() {
-  const sortedProjects = [...projectsData].sort((a, b) => {
-    const aFeatured = a.featured ? 1 : 0;
-    const bFeatured = b.featured ? 1 : 0;
-    if (aFeatured !== bFeatured) return bFeatured - aFeatured;
-    return (a.id ?? 0) - (b.id ?? 0);
-  });
+  const [filter, setFilter] = useState("all");
+
+  const sortedProjects = useMemo(() => {
+    return [...projectsData].sort((a, b) => {
+      const aFeatured = a.featured ? 1 : 0;
+      const bFeatured = b.featured ? 1 : 0;
+      if (aFeatured !== bFeatured) return bFeatured - aFeatured;
+      return (a.id ?? 0) - (b.id ?? 0);
+    });
+  }, []);
+
+  const visibleProjects = useMemo(() => {
+    if (filter === "featured") {
+      return sortedProjects.filter((p) => p.featured);
+    }
+    return sortedProjects;
+  }, [filter, sortedProjects]);
 
   return (
     <section id="projects" className="py-20 relative">
@@ -20,7 +37,7 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Featured <span className="gradient-text">Projects</span>
@@ -31,14 +48,32 @@ export default function Projects() {
           </p>
         </motion.div>
 
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
+          {FILTERS.map(({ id, label }) => (
+            <button
+              key={id}
+              type="button"
+              onClick={() => setFilter(id)}
+              className={`px-5 py-2 rounded-full text-sm font-medium border transition-colors ${
+                filter === id
+                  ? "bg-primary text-primary-foreground border-primary"
+                  : "border-border text-foreground/70 hover:border-primary/50 hover:text-primary"
+              }`}
+              aria-pressed={filter === id}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {sortedProjects.map((project, index) => (
+          {visibleProjects.map((project, index) => (
             <motion.div
               key={project.id}
+              layout
               initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
               className="group relative"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500" />
@@ -88,7 +123,9 @@ export default function Projects() {
                     </span>
                   )}
 
-                  {project.demo && project.demo !== "#" && project.demo !== "coming-soon" ? (
+                  {project.demo &&
+                  project.demo !== "#" &&
+                  project.demo !== "coming-soon" ? (
                     <a
                       href={project.demo}
                       target="_blank"
@@ -99,15 +136,10 @@ export default function Projects() {
                       Demo
                     </a>
                   ) : (
-                    <a
-                      href="/coming-soon"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm text-yellow-500/70 hover:text-yellow-500 transition-colors"
-                    >
+                    <span className="flex items-center gap-2 text-sm text-yellow-500/70">
                       <ExternalLink size={18} />
-                      Coming Soon
-                    </a>
+                      Demo coming soon
+                    </span>
                   )}
 
                   {project.demo2 && project.demo2 !== "#" ? (
@@ -126,6 +158,12 @@ export default function Projects() {
             </motion.div>
           ))}
         </div>
+
+        {visibleProjects.length === 0 && (
+          <p className="text-center text-foreground/60 mt-8">
+            No projects in this filter yet.
+          </p>
+        )}
       </div>
     </section>
   );
