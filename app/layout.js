@@ -56,6 +56,12 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={inter.className}>
+        <a
+          href="#home"
+          className="fixed -top-20 left-4 z-[100] px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium shadow-lg transition-[top] focus:top-4 focus:outline-none focus:ring-2 focus:ring-ring"
+        >
+          Skip to content
+        </a>
         <ThemeProvider defaultTheme="dark">{children}</ThemeProvider>
       </body>
     </html>
